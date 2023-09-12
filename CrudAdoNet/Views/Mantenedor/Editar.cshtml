@@ -1,0 +1,40 @@
+﻿@model CrudAdoNet.Models.ContactoModel;
+@{
+    ViewData["Title"] = "Editar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card col-8">
+    <div class="card-header">
+        Editar Contacto
+    </div>
+    <div class="card-body justify-content-center">
+        <form asp-action="Editar" asp-controller="Mantenedor" method="post">
+            <input asp-for="IdContacto" type="hidden" class="form-control" />
+            <div class="col-md-4 mb-3">
+                <label for="staticEmail2">Nombre</label>
+                <input asp-for="Nombre" type="text" class="form-control" />
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="staticEmail2">Telefono</label>
+                <input asp-for="Telefono" type="text" class="form-control" />
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+            </div>
+            <div class="col-md-4s mb-3">
+                <label for="staticEmail2">Correo</label>
+                <input asp-for="Correo" type="text" class="form-control" />
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="inputPassword2">Clave</label>
+                <input asp-for="Clave" type="password" class="form-control" />
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+            </div>
+            <div class="col-md-4 mb-3">
+                <button type="submit" class="btn btn-primary mb-3">Guardar</button>
+                <a asp-action="Listar" asp-Controller="Mantenedor" class="btn btn-warning btn-sm">Volver a la lista</a>
+            </div>
+        </form>
+    </div>
+</div>

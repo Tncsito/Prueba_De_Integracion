@@ -1,0 +1,39 @@
+﻿@model ContactoModel;
+@{
+    ViewData["Title"] = "Guardar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card col-8">
+    <div class="card-header">
+        Crear Contacto
+    </div>
+    <div class="card-body justify-content-center">
+        <form asp-action="Guardar" asp-controller="Mantenedor" method="post">
+            <div class="col-md-4 mb-3">
+                <label for="staticEmail2">Nombre</label>
+                <input asp-for="Nombre" type="text" class="form-control" />
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="staticEmail2">Telefono</label>
+                <input asp-for="Telefono" type="text" class="form-control" />
+                <span asp-validation-for="Telefono" class="text-danger"></span>
+            </div>
+            <div class="col-md-4s mb-3">
+                <label for="staticEmail2">Correo</label>
+                <input asp-for="Correo" type="text" class="form-control" />
+                <span asp-validation-for="Correo" class="text-danger"></span>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="staticEmail2">Clave</label>
+                <input asp-for="Clave" type="password" class="form-control" />
+                <span asp-validation-for="Clave" class="text-danger"></span>
+            </div>
+            <div class="col-md-4 mb-3">
+                <button type="submit" class="btn btn-primary mb-3">Confirm identity</button>
+                <a asp-action="Listar"asp-Controller="Mantenedor" class="btn btn-warning btn-sm">Volver a la lista</a>
+            </div>
+        </form>
+    </div>
+</div>
